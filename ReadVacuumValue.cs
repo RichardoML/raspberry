@@ -57,10 +57,10 @@ public class ReadVacuumValue
     {
         int n = port.BytesToRead;
         byte[] buf = new byte[n];
-        port.read(buf,0,n);
+        port.Read(buf,0,n);
         if(stringcomparer.Equals(ACK,buf))
         {
-            port.send(ENQ,0,1);
+            port.Write(ENQ,0,1);
         }
         else
         {
